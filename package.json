@@ -2,7 +2,7 @@
   "name": "image-share",
   "version": "1.0.0",
   "description": "API rest for image sharing.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest"
   },

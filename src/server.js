@@ -1,17 +1,5 @@
-let app = require ("../src/app")
-let supertest = require ("supertest");
-let request = supertest(app);
+let app = require ("./app")
 
-it("should listen on port 3000", () => {
-
-    return request.get("/").then(res=> {
-        let status = res.statusCode
-        expect(status).toEqual(200);
-    }).catch(err => {
-        fail(err)
-    })
-
-
-
-
+app.listen(3000, () => {
+    console.log(" App running on port 3000...")
 })

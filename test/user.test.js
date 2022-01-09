@@ -1,4 +1,4 @@
-let app = require ("../srs/app");
+let app = require ("../src/app");
 let supertest = require ("supertest");
 let request = supertest(app);
 
