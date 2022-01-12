@@ -1,7 +1,12 @@
 let app = require ("../src/app");
 let supertest = require ("supertest");
 let request = supertest(app);
-let User = require('../src/Models/User')
+const mongoose = require("mongoose")
+let userModel = require('../src/Models/User')
+
+/* mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true}, {useUnifiedTopology: true}) */
+
+const User = mongoose.model('User', userModel)
 
 describe( "Register User", () => {
     it("Should sign-up an user", () => {

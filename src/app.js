@@ -12,4 +12,9 @@ app.get('/', (req, res) => {
     res.json({});
 })
 
+app.route('/user')
+    .post(function(req, res) {
+        res.send({})
+    })
+
 module.exports = app;
