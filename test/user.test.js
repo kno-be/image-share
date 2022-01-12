@@ -1,12 +1,13 @@
 let app = require ("../src/app");
 let supertest = require ("supertest");
 let request = supertest(app);
+let User = require('../src/Models/User')
 
 describe( "Register User", () => {
     it("Should sign-up an user", () => {
         let time = Date.now();
         let email = `${time}@gmail.com`;
-        let user = { name: "Victor", email, pass: "123456"};
+        let user = { name: "Victor", email: email, pass: "123456"};
 
         request.post("/user")
             .send(user)
