@@ -13,8 +13,11 @@ app.get('/', (req, res) => {
 })
 
 app.route('/user')
+    .get(function(req,res) {
+        res.send({ 'Method GET':''})
+    })
     .post(function(req, res) {
-        res.send({})
+        res.send({ 'Method POST':''})
     })
 
 module.exports = app;
