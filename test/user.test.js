@@ -9,18 +9,15 @@ let userModel = require('../src/Models/User')
 const User = mongoose.model('User', userModel)
 
 describe( "Register User", () => {
-    it("Should sign-up an user", () => {
+    it("Should sign-up an user", async () => {
         let time = Date.now();
         let email = `${time}@gmail.com`;
-        let user = { name: "Victor", email: email, pass: "123456"};
+        let user = { name: "Victor", email, pass: "123456"};
 
-        return request.post("/user")
+        return await request.post("/user")
         .send(user)
         .then( res => {
             expect(res.body.email).toEqual(email);
-        }).catch( (res) =>  {
-            console.log(res.body.email)
         })
-
     })
 })
